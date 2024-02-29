@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<meta charset="ISO-8859-1">
+<title>NajafiCode.com</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+	  rel="stylesheet" 
+	  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+	  crossorigin="anonymous">
+
+</head>
+<body bgcolor="cyan">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/courses/all}">Welcome to Najafi-Code</a>
+  </div>
+</nav>
+<br>
+<br>
+<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card" >
+				<h2 class ="text-center">View Course Details</h2>
+				<div class="card-body">
+					<form th:action="@{/courses/fetchCourse}" method="get">
+						<div class="form-group">
+							<label>Course Id</label>
+							<input 
+							type="text"
+							name="name"
+							th:field="*{course.id}"
+							class="form-control"
+							placeHolder="Enter Course Id"
+							required />
+						</div>
+						 
+						<br/>
+						<div class ="col-12" >
+							<button class="btn btn-primary" type="submit">Get Details</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
